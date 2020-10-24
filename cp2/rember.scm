@@ -13,11 +13,34 @@
       ((null? lat) (quote ()))
       ((eq? (car lat) a) (cdr lat))
       (else (cons (car lat)
-            (rember a (cdr lat)))))))
+            (rember2 a (cdr lat)))))))
 
-(print (rember 'and '(bacon lettuce and tomato)))
-(print (rember 'fal '(falcon scheme dojo)))
-(print (rember 'falcon '(falcon scheme dojo)))
-(print (rember2 'falcon '(falcon scheme dojo falcon)))
-(print (rember2 'scheme '(falcon scheme dojo scheme)))
-(print (rember2 'fal '(falcon scheme dojo)))
+(print "-------")
+
+(print (rember2 'fal '()))
+(print (rember2 'fal '(fal)))
+
+(print (rember2 'fal '(apple)))
+
+
+(print (cons (car '(apple)) (rember2 'fal (cdr '(apple)))))
+(print (cons 'apple (rember2 'fal '())))
+(print (cons 'apple '()))
+
+(print "---------")
+(print (rember2 'fal '(apple banana fal)))
+
+(print (cons 'apple (rember2 'fal '(banana fal))))
+
+(print (cons 'apple (cons 'banana (rember2 'fal '(fal)))))
+
+(print (cons 'apple (cons 'banana '())))
+
+(print (cons 'apple '(banana)))
+
+(print '(apple banana))
+
+
+(print (rember2 'fal '(hoge fuga piyo)))
+
+
