@@ -15,20 +15,6 @@
       (else (cons (car lat)
             (rember2 a (cdr lat)))))))
 
-(print "-------")
-
-(print (rember2 'fal '()))
-(print (rember2 'fal '(fal)))
-
-(print (rember2 'fal '(apple)))
-
-
-(print (cons (car '(apple)) (rember2 'fal (cdr '(apple)))))
-(print (cons 'apple (rember2 'fal '())))
-(print (cons 'apple '()))
-
-(print "---------")
-(print (rember2 'fal '(apple banana fal)))
 
 (print (cons 'apple (rember2 'fal '(banana fal))))
 
@@ -43,4 +29,8 @@
 
 (print (rember2 'fal '(hoge fuga piyo)))
 
+(print (cons 'hoge (rember2 'fal '(fuga piyo))))
+(print (cons 'hoge (cons 'fuga (rember2 'fal '(piyo)))))
+(print (cons 'hoge (cons 'fuga (cons 'piyo (rember2 'fal '()))
+(print (cons 'hoge (cons 'fuga (cons 'piyo '()))))
 
