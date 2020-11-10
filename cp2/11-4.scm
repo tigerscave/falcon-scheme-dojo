@@ -56,9 +56,23 @@
                     (subst2 new o1 o2
                       (cdr lat)))))))))
             
-(print (subst2 'vanilla 'chocolate 'banana '(banana ice creamwith chocolate topping)))
-      
+(print (subst2 'vanilla 'chocolate 'banana '(banana ice cream with chocolate topping)))
+;(cons vanilla (ice cream with chocolate topping))
+;(vanilla ice cream with chocolate topping)
+
+(print (subst2 'vanilla 'chocolate 'banana '(ice cream banana with chocolate topping)))
+;(cons (ice (subst2 vanilla chocolate banana (cream banana with chocolate topping))))
+;(cons (ice (cons cream (subst2 vanilla chocolate banana (banana with chocolate topping)))))
+;(cons (ice (cons cream (cons vanilla (with chocolate topping) ))))
+;(ice cream vanilla with chocolate topping)
+
+
+
+
 (print (subst 'topping 'fudge '(ice cream with fudge for dessert)))
+
+
+
 
 (print (insertR 'topping 'fudge '(ice cream with fudge for dessert) ))
 
