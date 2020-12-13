@@ -13,7 +13,7 @@
   (lambda (a l)
     (cond
       ((null? l) #f)
-      ((eq? a (car l))#t)
+      ((eq? a (car l)) #t)
       (else (member? a (cdr l))))))
 
 (define rember
@@ -23,17 +23,8 @@
       (eq? a (car lat) (cdr lat))
       (else (cons (car lat) (rember a (cdr lat)))))))
 
-(define insertR
-  (lambda (new old lat)
-    (cond
-      ((null? lat) (quote ()))
-      (eq? (car lat) new) (cons (cdr lat) old)(cons new lat)
-      (else (cons (car lat) (insertR new old (cdr lat))))
-
-
 
 (print (atom? 'a))
-(print (lat? '(a b s)))
-(print (member? 'a '(b c s)))
+(print (lat? '(a b (c))))
+(print (member? 'a '(b c a)))
 (print (rember 'fal '(hoge fal fuga piyo)))
-(print (insertR 'fal 'test '(hoge fal fuga piyo)))

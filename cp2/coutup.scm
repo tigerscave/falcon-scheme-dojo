@@ -9,15 +9,19 @@
       ((eq? a (car l))  (add1 (countup a (cdr l))))
       (else (countup  a (cdr l))) )))
 
-(define make-nums
+(define sub1
+  (lambda (n)
+      (- n 1)))
+
+(define nums
   (lambda (n)
     (cond 
-      ((null? n) 0)
-      ((eq? (add1 3) (car n)) (make-nums (cdr n)))
-      (else (cons (add1 (make-nums n)))))))
+      ((zero? n) '())
+      (else (cons n (nums (sub1 n)))))))
 
 (print (countup 'apple '(a b apple a apple)))
 (print (countup 'apple '(a b c)))
 (print (add1 5))
 
-(print (make-nums '(4)))
+(print (nums 1))
+(print (nums 5))

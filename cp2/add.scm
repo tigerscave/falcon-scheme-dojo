@@ -36,3 +36,4 @@
 (print (o- 67 1))
 (print "---addtup---") ;リスト内の合計
 (print (addtup '(1 2 4)))
+
