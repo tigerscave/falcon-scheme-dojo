@@ -3,6 +3,8 @@
     (and (not (pair? x)) (not (null? x)))))
 
 
+
+
 (define rember*
   (lambda (a l)
     (cond
@@ -20,6 +22,7 @@
   (cons
     (cons (rember* 'chips '(with)) (rember* 'chips '(fish)))
     (cons (rember* 'chips '(chips)) (rember* 'chips '()) )))
+
 
 (define member*
   (lambda (a l)
